@@ -1,4 +1,6 @@
 {
     "mongoURI": "mongodb+srv://mernApp:Caboose2@fiasco-cluster.fr8r5.mongodb.net/testDB?retryWrites=true&w=majority",
-    "jwtToken": "serverSecretToken"
+    "jwtToken": "serverSecretToken",
+    "githubClientID": "26327394e03b6593d6f5",
+    "githubSecret": "aa809ac2343766da51696c01c91c80a150ce8611"
 }
