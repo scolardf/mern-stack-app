@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://mernApp:Caboose2@fiasco-cluster.fr8r5.mongodb.net/testDB?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://mernApp:Caboose2@fiasco-cluster.fr8r5.mongodb.net/testDB?retryWrites=true&w=majority",
+    "jwtToken": "serverSecretToken"
 }
