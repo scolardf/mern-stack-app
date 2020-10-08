@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "fiasco",
   "license": "ISC",
@@ -24,5 +26,8 @@
     "eslint": "^7.10.0",
     "eslint-config-prettier": "^6.12.0",
     "nodemon": "^2.0.4"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   }
 }
