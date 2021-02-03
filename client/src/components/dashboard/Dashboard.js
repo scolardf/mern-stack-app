@@ -1,10 +1,12 @@
-import React, { Fragment, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { getCurrentProfile } from '../../actions/profile';
-import Spinner from '../layout/Spinner';
-import DashboardActions from './DashboardActions';
+import React, { Fragment, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { getCurrentProfile } from '../../actions/profile'
+import Spinner from '../layout/Spinner'
+import DashboardActions from './DashboardActions'
+import Experience from './Experience'
+import Education from './Education'
 
 const Dashboard = ({
 	getCurrentProfile,
@@ -12,8 +14,8 @@ const Dashboard = ({
 	profile: { profile, loading },
 }) => {
 	useEffect(() => {
-		getCurrentProfile();
-	}, [getCurrentProfile]);
+		getCurrentProfile()
+	}, [getCurrentProfile])
 	return loading && profile === null ? (
 		<Spinner />
 	) : (
@@ -25,7 +27,9 @@ const Dashboard = ({
 			{profile !== null ? (
 				<Fragment>
 					{' '}
-					<DashboardActions />{' '}
+					<DashboardActions />
+					<Experience experience={profile.experience} />
+					<Education education={profile.education} />
 				</Fragment>
 			) : (
 				<Fragment>
@@ -37,18 +41,18 @@ const Dashboard = ({
 				</Fragment>
 			)}
 		</Fragment>
-	);
-};
+	)
+}
 
 Dashboard.propTypes = {
 	getCurrentProfile: PropTypes.func.isRequired,
 	auth: PropTypes.object.isRequired,
 	profile: PropTypes.object.isRequired,
-};
+}
 
 const mapStateToProps = (state) => ({
 	auth: state.auth,
 	profile: state.profile,
-});
+})
 
-export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);
+export default connect(mapStateToProps, { getCurrentProfile })(Dashboard)
