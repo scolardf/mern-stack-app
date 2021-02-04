@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { addEducation } from '../../actions/profile'
 
@@ -95,7 +95,7 @@ const AddEducation = ({ addEducation, history }) => {
 								toggleDisabled(!toDateDisabled)
 							}}
 						/>{' '}
-						Current Job
+						Current School
 					</p>
 				</div>
 				<div class='form-group'>
@@ -119,9 +119,9 @@ const AddEducation = ({ addEducation, history }) => {
 					></textarea>
 				</div>
 				<input type='submit' class='btn btn-primary my-1' />
-				<a class='btn btn-light my-1' href='dashboard.html'>
+				<Link class='btn btn-light my-1' to='/dashboard'>
 					Go Back
-				</a>
+				</Link>
 			</form>
 		</Fragment>
 	)
